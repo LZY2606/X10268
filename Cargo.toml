@@ -1,0 +1,18 @@
+[package]
+name = "pe-mirror"
+version = "0.1.0"
+edition = "2021"
+description = "PE loading-semantics workbench: section mapping, base relocations, import binding evidence desk"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["full"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+base64 = "0.22"
+
+[dev-dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["json"] }
+tempfile = "3"
