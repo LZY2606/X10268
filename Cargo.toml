@@ -1,0 +1,23 @@
+[package]
+name = "pe-evidence-bench"
+version = "1.0.0"
+edition = "2021"
+description = "完全本地的 PE 装载语义 / 重定位 / import 绑定证据工作台"
+
+[[bin]]
+name = "pe-evidence"
+path = "src/main.rs"
+
+[dependencies]
+axum = { version = "0.8.9", features = ["macros"] }
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "net", "signal", "sync"] }
+rusqlite = { version = "0.37", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1" }
+tower-http = { version = "0.6", features = ["fs", "set-header"] }
+tracing-subscriber = { version = "0.3" }
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "net", "test-util"] }
