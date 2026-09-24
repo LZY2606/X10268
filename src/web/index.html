@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PE 装载证据台</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<header>
+  <h1>PE 装载镜证据台</h1>
+  <div class="toolbar">
+    <button id="btn-load-fixture">载入仓库内示例</button>
+    <label>分支
+      <select id="branch-select"></select>
+    </label>
+    <label>回到事件
+      <select id="event-select"><option value="">最新</option></select>
+    </label>
+    <span id="version-badge" class="badge"></span>
+    <button id="btn-revise-rules">参数修订 v2</button>
+    <button id="btn-revise-source">局部源改动 (USER32)</button>
+    <button id="btn-export">导出案例</button>
+    <button id="btn-import">删除并重新导入</button>
+    <button id="btn-undo">撤销最近裁定</button>
+  </div>
+  <div id="conflict-banner" class="conflict hidden"></div>
+</header>
+
+<nav class="tabs">
+  <button data-tab="address" class="active">文件/虚拟地址对照</button>
+  <button data-tab="sections">节区间</button>
+  <button data-tab="relocs">重定位补丁</button>
+  <button data-tab="imports">import 图</button>
+  <button data-tab="unresolved">未解析符号</button>
+  <button data-tab="events">事件/失效范围</button>
+  <button data-tab="materials">原始材料</button>
+</nav>
+
+<main>
+  <section id="tab-address" class="tab active"></section>
+  <section id="tab-sections" class="tab hidden"></section>
+  <section id="tab-relocs" class="tab hidden"></section>
+  <section id="tab-imports" class="tab hidden"></section>
+  <section id="tab-unresolved" class="tab hidden"></section>
+  <section id="tab-events" class="tab hidden"></section>
+  <section id="tab-materials" class="tab hidden"></section>
+</main>
+
+<dialog id="conflict-dialog">
+  <h3>版本冲突</h3>
+  <pre id="conflict-detail"></pre>
+  <div class="row">
+    <button id="conflict-refresh">拉取最新并重试</button>
+    <button id="conflict-close">关闭</button>
+  </div>
+</dialog>
+
+<script src="/app.js"></script>
+</body>
+</html>

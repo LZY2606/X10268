@@ -1,0 +1,16 @@
+[package]
+name = "pe_loader_bench"
+version = "0.1.0"
+edition = "2021"
+description = "Offline PE loader semantics evidence bench: section mapping, base relocation and import resolution"
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "sync", "time"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+hex = "0.4"
+
+[dev-dependencies]
